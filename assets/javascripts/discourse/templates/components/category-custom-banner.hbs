@@ -1,0 +1,24 @@
+{{#if this.siteSettings.custom_banner_enabled}}
+  <section class="category-custom-banner">
+    <h3>{{i18n "category.custom_banner.title"}}</h3>
+
+    <div class="control-group">
+      <label>{{i18n "category.custom_banner.banner_title_label"}}</label>
+      <Input
+        @type="text"
+        @value={{this.category.custom_fields.custom_banner_title}}
+        class="input-large"
+        {{on "change" this.updateBannerTitle}}
+      />
+    </div>
+
+    <div class="control-group">
+      <label>{{i18n "category.custom_banner.banner_description_label"}}</label>
+      <Textarea
+        @value={{this.category.custom_fields.custom_banner_description}}
+        class="input-large"
+        {{on "change" this.updateBannerDescription}}
+      />
+    </div>
+  </section>
+{{/if}}

@@ -1,0 +1,29 @@
+{{#if siteSettings.custom_banner_enabled}}
+  <section class="category-custom-banner">
+    <h3>Banner Customizado</h3>
+    <p class="description">Faça upload do banner que deverá aparecer no topo da
+      categoria para todos.</p>
+
+    <div class="control-group">
+      {{#if this.category.banner_url}}
+        <div class="current-banner">
+          <img src={{this.category.banner_url}} alt="Banner atual" />
+          <DButton
+            @action={{action "removeBanner"}}
+            @icon="times"
+            @label="category.custom_banner.remove_banner"
+            class="btn-danger"
+          />
+        </div>
+      {{/if}}
+      <UppyImageUploader
+        @imageUrl={{this.category.banner_url}}
+        @onUploadDone={{action "uploadBanner"}}
+        @type="banner"
+        @id="category-banner-uploader"
+        @acceptedFileTypes=".jpg,.jpeg,.png"
+        @maxFileSize={{5242880}}
+      />
+    </div>
+  </section>
+{{/if}}

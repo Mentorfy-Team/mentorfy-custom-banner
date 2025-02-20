@@ -1,0 +1,11 @@
+en:
+  js:
+    category:
+      custom_banner:
+        title: "Banner Customizado"
+        remove_banner: "Remover Banner"
+        upload_banner: "Fazer Upload do Banner"
+        upload_error: "Erro ao fazer upload do banner"
+        delete_error: "Erro ao remover o banner"
+        banner_title_label: "Banner Title"
+        banner_description_label: "Banner Description" 

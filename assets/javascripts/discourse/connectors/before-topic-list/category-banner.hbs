@@ -1,0 +1,14 @@
+{{! Debug info }}
+{{log "[CustomBanner] Rendering banner template with context:" this}}
+
+{{#if this.outletArgs.category.custom_fields.banner_url}}
+  <div class="category-banner-display">
+    <div class="banner-image-container">
+      <img
+        src={{this.outletArgs.category.custom_fields.banner_url}}
+        alt="Banner da categoria {{this.outletArgs.category.name}}"
+        loading="lazy"
+      />
+    </div>
+  </div>
+{{/if}}
