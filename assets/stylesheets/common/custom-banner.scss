@@ -82,10 +82,33 @@
     }
   }
 
+  .banner-description-container {
+    padding: 1em 2em;
+    background-color: var(--secondary);
+    border-bottom: 1px solid var(--primary-low);
+
+    .banner-description {
+      margin: 0;
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: var(--primary);
+      max-width: 950px;
+      margin: 0 auto;
+    }
+  }
+
   // Responsividade para telas menores
   @media (max-width: 767px) {
     .banner-image-container {
       padding-top: 40%; // Proporção mais alta para mobile
+    }
+
+    .banner-description-container {
+      padding: 0.8em 1em;
+
+      .banner-description {
+        font-size: 1em;
+      }
     }
   }
 }

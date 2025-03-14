@@ -69,6 +69,35 @@ export default {
             }
           },
 
+          async updateBannerDescription(event) {
+            try {
+              const category = this.category;
+              if (!category) {
+                throw new Error("Categoria não encontrada");
+              }
+
+              console.log(
+                "[CustomBanner] Updating banner description for category:",
+                category.id,
+                "Text:",
+                event.target.value
+              );
+
+              // Atualiza o modelo da categoria com a descrição
+              category.set("custom_fields.banner_description", event.target.value);
+              
+              // Salva o campo personalizado
+              await category.save();
+
+              console.log(
+                "[CustomBanner] Description updated successfully for category model"
+              );
+            } catch (error) {
+              console.error("[CustomBanner] Error updating banner description:", error);
+              popupAjaxError(error);
+            }
+          },
+
           async removeBanner() {
             try {
               const category = this.category;

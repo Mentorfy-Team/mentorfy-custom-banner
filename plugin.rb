@@ -1,6 +1,6 @@
 # name: discourse-custom-banner
 # about: Adds custom banner settings to categories
-# version: 0.1
+# version: 0.2
 # authors: Mentorfy
 # url: https://github.com/mentorfy/mentorfy-custom-banner
 
@@ -25,8 +25,13 @@ after_initialize do
   add_to_serializer(:category, :banner_url) { object.custom_fields["banner_url"] }
   add_to_serializer(:category, :include_banner_url?) { object.custom_fields["banner_url"].present? }
 
+  add_to_serializer(:category, :banner_description) { object.custom_fields["banner_description"] }
+  add_to_serializer(:category, :include_banner_description?) { object.custom_fields["banner_description"].present? }
+
   Category.register_custom_field_type("banner_url", :string)
+  Category.register_custom_field_type("banner_description", :string)
   Site.preloaded_category_custom_fields << "banner_url"
+  Site.preloaded_category_custom_fields << "banner_description"
 
   CustomBanner::Engine.routes.draw do
     post "/:category_id/upload" => "banner#upload"
