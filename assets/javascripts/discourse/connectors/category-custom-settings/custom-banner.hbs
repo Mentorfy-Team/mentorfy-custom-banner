@@ -13,8 +13,8 @@
     <label>Descrição do Banner</label>
     <p class="description">Texto explicativo que aparecerá abaixo do banner da categoria.</p>
 
-    <d-editor @value={{this.category.custom_fields.banner_description}} @onChange={{action
-      this.updateBannerDescription}} class="input-large" />
+    <d-editor value={{this.category.custom_fields.banner_description}} @onChange={{action this.updateBannerDescription}}
+      class="input-large" />
   </div>
 </section>
 {{/if}}
