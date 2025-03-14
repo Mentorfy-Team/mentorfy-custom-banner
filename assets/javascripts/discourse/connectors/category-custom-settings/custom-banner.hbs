@@ -12,8 +12,8 @@
   <div class="control-group">
     <label>Descrição do Banner</label>
     <p class="description">Texto explicativo que aparecerá abaixo do banner da categoria.</p>
-    <Textarea @value={{this.category.custom_fields.banner_description}} class="input-large" {{on "change"
-      this.updateBannerDescription}} />
+    <DEditor @value={{this.category.custom_fields.banner_description}} @onChange={{this.updateBannerDescription}}
+      class="input-large" />
   </div>
 </section>
 {{/if}}
